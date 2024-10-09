@@ -4,6 +4,7 @@ import day7.tobe.model.StudyCafeLockerPass;
 import day7.tobe.model.StudyCafePass;
 
 import java.util.List;
+import java.util.Optional;
 
 public class OutputHandler {
 
@@ -40,6 +41,10 @@ public class OutputHandler {
 
         System.out.println(askMessage);
         System.out.println("1. 예 | 2. 아니오");
+    }
+
+    public void showPassOrderSummary(StudyCafePass selectedPass) {
+        showPassOrderSummary(selectedPass, null);
     }
 
     public void showPassOrderSummary(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
