@@ -13,6 +13,7 @@ public class StudyCafeApplication {
         OutputHandler outputHandler = new OutputHandler();
 
         IoHandler ioHandler = new IoHandler(inputHandler, outputHandler);
+
         StudyCafeFileHandler studyCafeFileHandler = new StudyCafeFileHandler();
 
         StudyCafePassMachine studyCafePassMachine = new StudyCafePassMachine(

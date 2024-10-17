@@ -5,18 +5,20 @@ import day7.tobe.exception.AppException;
 import day7.tobe.io.IoHandler;
 import day7.tobe.io.StudyCafeFileHandler;
 import day7.tobe.model.StudyCafeLockerPass;
+import day7.tobe.model.StudyCafeLockerPasses;
 import day7.tobe.model.StudyCafePass;
 import day7.tobe.model.StudyCafePassType;
+import day7.tobe.model.StudyCafePasses;
 
 import java.util.List;
 import java.util.Optional;
 
 public class StudyCafePassMachine {
 
-    private final List<StudyCafePass> allPasses;
-    private final List<StudyCafeLockerPass> allLockerPasses;
     private final IoHandler ioHandler;
     private final StudyCafeFileHandler studyCafeFileHandler;
+    private final StudyCafePasses allPasses;
+    private final StudyCafeLockerPasses allLockerPasses;
 
     public StudyCafePassMachine(
             IoHandler ioHandler,
@@ -73,22 +75,18 @@ public class StudyCafePassMachine {
     }
 
     private Optional<StudyCafeLockerPass> findCandidateLockerPassesBy(StudyCafePass pass) {
-        return allLockerPasses.stream()
-                .filter(pass::isSameDurationType)
-                .findFirst();
+        return allLockerPasses.findBy(pass);
     }
 
-    private List<StudyCafePass> getCandidatePasses(List<StudyCafePass> studyCafePasses, StudyCafePassType userSelectedPassType) {
-        return studyCafePasses.stream()
-                .filter(studyCafePass -> studyCafePass.isSameType(userSelectedPassType))
-                .toList();
+    private List<StudyCafePass> getCandidatePasses(StudyCafePasses studyCafePasses, StudyCafePassType userSelectedPassType) {
+        return studyCafePasses.selectCafePassesBy(userSelectedPassType);
     }
 
-    private List<StudyCafePass> getAllPasses() {
+    private StudyCafePasses getAllPasses() {
         return studyCafeFileHandler.readStudyCafePasses();
     }
 
-    private List<StudyCafeLockerPass> getAllLockPasses() {
+    private StudyCafeLockerPasses getAllLockPasses() {
         return studyCafeFileHandler.readLockerPasses();
     }
 
