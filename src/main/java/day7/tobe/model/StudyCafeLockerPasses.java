@@ -13,7 +13,7 @@ public class StudyCafeLockerPasses {
 
     public Optional<StudyCafeLockerPass> findBy(StudyCafePass pass) {
         return studyCafeLockerPasses.stream()
-                .filter(pass::isSameDurationType)
+                .filter(pass::isSameDurationAndSameType)
                 .findFirst();
     }
 }
