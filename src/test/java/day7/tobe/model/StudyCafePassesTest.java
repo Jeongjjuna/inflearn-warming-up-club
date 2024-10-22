@@ -19,7 +19,7 @@ class StudyCafePassesTest {
                 StudyCafePass.of(StudyCafePassType.FIXED, 20, 1500, 5),
                 StudyCafePass.of(StudyCafePassType.HOURLY, 10, 1000, 5)
         );
-        StudyCafePasses totalStudyCafePasses = new StudyCafePasses(studyCafePasses);
+        StudyCafePasses totalStudyCafePasses = StudyCafePasses.of(studyCafePasses);
 
         // when
         List<StudyCafePass> selectedCafePasses = totalStudyCafePasses.selectCafePassesBy(StudyCafePassType.FIXED);
