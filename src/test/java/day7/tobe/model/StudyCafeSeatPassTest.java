@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("StudyCafePass 테스트")
-class StudyCafePassTest {
+class StudyCafeSeatPassTest {
 
     @DisplayName("카페 이용권의 가격을 알 수 있다.")
     @Test
     void getStudyCafePassPrice() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.FIXED, 10, 1000, 10
         );
 
@@ -27,7 +27,7 @@ class StudyCafePassTest {
     @Test
     void getStudyCafePassDiscountRate() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.FIXED, 10, 1000, 10
         );
 
@@ -42,7 +42,7 @@ class StudyCafePassTest {
     @Test
     void cannotUseLocker() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.FIXED, 10, 1000, 10
         );
 
@@ -57,7 +57,7 @@ class StudyCafePassTest {
     @Test
     void canUseLocker() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.HOURLY, 10, 1000, 10
         );
 
@@ -72,7 +72,7 @@ class StudyCafePassTest {
     @Test
     void isSameType() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.HOURLY, 10, 1000, 10
         );
 
@@ -87,7 +87,7 @@ class StudyCafePassTest {
     @Test
     void isDifferentType() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.HOURLY, 10, 1000, 10
         );
 
@@ -102,7 +102,7 @@ class StudyCafePassTest {
     @Test
     void isSameDurationAndSameType() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.HOURLY, 10, 1000, 10
         );
         StudyCafeLockerPass lockerPass = StudyCafeLockerPass.of(
@@ -120,7 +120,7 @@ class StudyCafePassTest {
     @Test
     void isDifferentDurationAndSameType() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.HOURLY, 10, 1000, 10
         );
         StudyCafeLockerPass lockerPass = StudyCafeLockerPass.of(
@@ -138,7 +138,7 @@ class StudyCafePassTest {
     @Test
     void isSameDurationAndDifferentType() {
         // given
-        StudyCafePass pass = StudyCafePass.of(
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(
                 StudyCafePassType.HOURLY, 10, 1000, 10
         );
         StudyCafeLockerPass lockerPass = StudyCafeLockerPass.of(

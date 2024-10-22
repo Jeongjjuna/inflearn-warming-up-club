@@ -22,7 +22,7 @@ class StudyCafeLockerPassesTest {
                 StudyCafeLockerPass.of(StudyCafePassType.HOURLY, 10, 1000)
         );
         StudyCafeLockerPasses allLockerPasses = new StudyCafeLockerPasses(studyCafeLockerPasses);
-        StudyCafePass pass = StudyCafePass.of(StudyCafePassType.FIXED, 10, 1000, 5);
+        StudyCafeSeatPass pass = StudyCafeSeatPass.of(StudyCafePassType.FIXED, 10, 1000, 5);
 
         // when
         Optional<StudyCafeLockerPass> lockerPass = allLockerPasses.findBy(pass);

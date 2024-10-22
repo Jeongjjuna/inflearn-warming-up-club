@@ -1,8 +1,8 @@
 package day7.tobe.io;
 
 import day7.tobe.exception.AppException;
-import day7.tobe.model.StudyCafePass;
 import day7.tobe.model.StudyCafePassType;
+import day7.tobe.model.StudyCafeSeatPass;
 
 import java.util.List;
 import java.util.Scanner;
@@ -26,7 +26,7 @@ public class InputHandler {
         throw new AppException("잘못된 입력입니다.");
     }
 
-    public StudyCafePass getSelectPass(List<StudyCafePass> passes) {
+    public StudyCafeSeatPass getSelectPass(List<StudyCafeSeatPass> passes) {
         String userInput = SCANNER.nextLine();
         int selectedIndex = Integer.parseInt(userInput) - 1;
         return passes.get(selectedIndex);

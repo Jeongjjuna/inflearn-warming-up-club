@@ -1,8 +1,8 @@
 package day7.tobe.io;
 
 import day7.tobe.model.StudyCafeLockerPass;
-import day7.tobe.model.StudyCafePass;
 import day7.tobe.model.StudyCafePassType;
+import day7.tobe.model.StudyCafeSeatPass;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class IoHandler {
         return inputHandler.getPassTypeSelectingUserAction();
     }
 
-    public StudyCafePass askStudyCafePassSelecting(List<StudyCafePass> candidatePasses) {
+    public StudyCafeSeatPass askStudyCafePassSelecting(List<StudyCafeSeatPass> candidatePasses) {
         outputHandler.showPassListForSelection(candidatePasses);
         return inputHandler.getSelectPass(candidatePasses);
     }
@@ -39,11 +39,11 @@ public class IoHandler {
         return inputHandler.getLockerSelection();
     }
 
-    public void showPassOrderSummary(StudyCafePass selectedPass) {
+    public void showPassOrderSummary(StudyCafeSeatPass selectedPass) {
         outputHandler.showPassOrderSummary(selectedPass);
     }
 
-    public void showPassOrderSummary(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
+    public void showPassOrderSummary(StudyCafeSeatPass selectedPass, StudyCafeLockerPass lockerPass) {
         outputHandler.showPassOrderSummary(selectedPass, lockerPass);
     }
 

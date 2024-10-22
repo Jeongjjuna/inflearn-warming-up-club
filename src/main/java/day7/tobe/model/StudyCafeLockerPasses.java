@@ -11,7 +11,7 @@ public class StudyCafeLockerPasses {
         this.studyCafeLockerPasses = studyCafeLockerPasses;
     }
 
-    public Optional<StudyCafeLockerPass> findBy(StudyCafePass pass) {
+    public Optional<StudyCafeLockerPass> findBy(StudyCafeSeatPass pass) {
         return studyCafeLockerPasses.stream()
                 .filter(pass::isSameDurationAndSameType)
                 .findFirst();
