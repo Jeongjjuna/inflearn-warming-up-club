@@ -1,8 +1,8 @@
 package day7.tobe.io;
 
 import day7.tobe.exception.AppException;
-import day7.tobe.model.StudyCafePassType;
-import day7.tobe.model.StudyCafeSeatPass;
+import day7.tobe.model.pass.seat.StudyCafePassType;
+import day7.tobe.model.pass.seat.StudyCafeSeatPass;
 
 import java.util.List;
 import java.util.Scanner;

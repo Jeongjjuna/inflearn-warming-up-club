@@ -1,7 +1,7 @@
 package day7.tobe.io;
 
-import day7.tobe.model.StudyCafeLockerPass;
-import day7.tobe.model.StudyCafeSeatPass;
+import day7.tobe.model.pass.locker.StudyCafeLockerPass;
+import day7.tobe.model.pass.seat.StudyCafeSeatPass;
 
 import java.util.List;
 

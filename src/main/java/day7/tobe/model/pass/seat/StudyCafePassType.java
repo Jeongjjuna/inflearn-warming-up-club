@@ -1,4 +1,4 @@
-package day7.tobe.model;
+package day7.tobe.model.pass.seat;
 
 public enum StudyCafePassType {
 

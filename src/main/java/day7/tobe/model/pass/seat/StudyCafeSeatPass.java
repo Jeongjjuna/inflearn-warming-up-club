@@ -1,4 +1,6 @@
-package day7.tobe.model;
+package day7.tobe.model.pass.seat;
+
+import day7.tobe.model.pass.locker.StudyCafeLockerPass;
 
 public class StudyCafeSeatPass {
 

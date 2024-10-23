@@ -1,5 +1,8 @@
 package day7.tobe.model;
 
+import day7.tobe.model.pass.seat.StudyCafePassType;
+import day7.tobe.model.pass.seat.StudyCafeSeatPass;
+import day7.tobe.model.pass.seat.StudyCafeSeatPasses;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +25,7 @@ class StudyCafeSeatPassesTest {
         StudyCafeSeatPasses totalStudyCafeSeatPasses = StudyCafeSeatPasses.of(studyCafeSeatPasses);
 
         // when
-        List<StudyCafeSeatPass> selectedCafePasses = totalStudyCafeSeatPasses.selectCafePassesBy(StudyCafePassType.FIXED);
+        List<StudyCafeSeatPass> selectedCafePasses = totalStudyCafeSeatPasses.findPassBy(StudyCafePassType.FIXED);
 
         // then
         assertThat(selectedCafePasses.size()).isEqualTo(2);

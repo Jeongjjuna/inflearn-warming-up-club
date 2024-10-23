@@ -1,10 +1,10 @@
 package day7.tobe.io;
 
-import day7.tobe.model.StudyCafeLockerPass;
-import day7.tobe.model.StudyCafeLockerPasses;
-import day7.tobe.model.StudyCafePassType;
-import day7.tobe.model.StudyCafeSeatPass;
-import day7.tobe.model.StudyCafeSeatPasses;
+import day7.tobe.model.pass.locker.StudyCafeLockerPass;
+import day7.tobe.model.pass.locker.StudyCafeLockerPasses;
+import day7.tobe.model.pass.seat.StudyCafePassType;
+import day7.tobe.model.pass.seat.StudyCafeSeatPass;
+import day7.tobe.model.pass.seat.StudyCafeSeatPasses;
 
 import java.io.IOException;
 import java.nio.file.Files;
