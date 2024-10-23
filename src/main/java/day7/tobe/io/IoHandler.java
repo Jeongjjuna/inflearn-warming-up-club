@@ -1,5 +1,6 @@
 package day7.tobe.io;
 
+import day7.tobe.model.order.StudyCafePassOrder;
 import day7.tobe.model.pass.locker.StudyCafeLockerPass;
 import day7.tobe.model.pass.seat.StudyCafePassType;
 import day7.tobe.model.pass.seat.StudyCafeSeatPass;
@@ -39,12 +40,8 @@ public class IoHandler {
         return inputHandler.getLockerSelection();
     }
 
-    public void showPassOrderSummary(StudyCafeSeatPass selectedPass) {
-        outputHandler.showPassOrderSummary(selectedPass);
-    }
-
-    public void showPassOrderSummary(StudyCafeSeatPass selectedPass, StudyCafeLockerPass lockerPass) {
-        outputHandler.showPassOrderSummary(selectedPass, lockerPass);
+    public void showPassOrderSummary(StudyCafePassOrder passOrder) {
+        outputHandler.showPassOrderSummary(passOrder);
     }
 
     public void showSimpleMessage(String message) {

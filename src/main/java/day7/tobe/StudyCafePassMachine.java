@@ -4,6 +4,7 @@ package day7.tobe;
 import day7.tobe.exception.AppException;
 import day7.tobe.io.IoHandler;
 import day7.tobe.io.StudyCafeFileHandler;
+import day7.tobe.model.order.StudyCafePassOrder;
 import day7.tobe.model.pass.locker.StudyCafeLockerPass;
 import day7.tobe.model.pass.locker.StudyCafeLockerPasses;
 import day7.tobe.model.pass.seat.StudyCafePassType;
@@ -35,10 +36,11 @@ public class StudyCafePassMachine {
             StudyCafeSeatPass selectedPass = selectPass();
             Optional<StudyCafeLockerPass> optionalLockerPass = selectLockerPass(selectedPass);
 
-            optionalLockerPass.ifPresentOrElse(
-                    lockerPass -> ioHandler.showPassOrderSummary(selectedPass, lockerPass),
-                    () -> ioHandler.showPassOrderSummary(selectedPass)
+            StudyCafePassOrder passOrder = StudyCafePassOrder.of(
+                    selectedPass,
+                    optionalLockerPass.orElse(null)
             );
+            ioHandler.showPassOrderSummary(passOrder);
 
         } catch (AppException e) {
             ioHandler.showSimpleMessage(e.getMessage());

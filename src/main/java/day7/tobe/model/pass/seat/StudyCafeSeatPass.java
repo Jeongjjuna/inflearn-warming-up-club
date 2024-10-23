@@ -33,6 +33,10 @@ public class StudyCafeSeatPass implements StudyCafePass {
         return isSameDuration(lockerPass) && isSamePassType(lockerPass);
     }
 
+    public int getDiscountPrice() {
+        return (int) (price * discountRate);
+    }
+
     @Override
     public StudyCafePassType getPassType() {
         return passType;
