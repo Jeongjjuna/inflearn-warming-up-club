@@ -1,8 +1,9 @@
 package day7.tobe.model.pass.seat;
 
+import day7.tobe.model.pass.StudyCafePass;
 import day7.tobe.model.pass.locker.StudyCafeLockerPass;
 
-public class StudyCafeSeatPass {
+public class StudyCafeSeatPass implements StudyCafePass {
 
     private final StudyCafePassType passType;
     private final int duration;
@@ -20,27 +21,6 @@ public class StudyCafeSeatPass {
         return new StudyCafeSeatPass(passType, duration, price, discountRate);
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public double getDiscountRate() {
-        return discountRate;
-    }
-
-    public String display() {
-        if (passType == StudyCafePassType.HOURLY) {
-            return String.format("%s시간권 - %d원", duration, price);
-        }
-        if (passType == StudyCafePassType.WEEKLY) {
-            return String.format("%s주권 - %d원", duration, price);
-        }
-        if (passType == StudyCafePassType.FIXED) {
-            return String.format("%s주권 - %d원", duration, price);
-        }
-        return "";
-    }
-
     public boolean cannotUseLocker() {
         return passType.isNotLockerType();
     }
@@ -51,6 +31,25 @@ public class StudyCafeSeatPass {
 
     public boolean isSameDurationAndSameType(StudyCafeLockerPass lockerPass) {
         return isSameDuration(lockerPass) && isSamePassType(lockerPass);
+    }
+
+    @Override
+    public StudyCafePassType getPassType() {
+        return passType;
+    }
+
+    @Override
+    public int getDuration() {
+        return duration;
+    }
+
+    @Override
+    public int getPrice() {
+        return price;
+    }
+
+    public double getDiscountRate() {
+        return discountRate;
     }
 
     private boolean isSameDuration(StudyCafeLockerPass lockerPass) {
