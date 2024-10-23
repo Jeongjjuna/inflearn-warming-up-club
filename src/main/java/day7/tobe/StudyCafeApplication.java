@@ -1,26 +1,18 @@
 package day7.tobe;
 
-import day7.tobe.io.InputHandler;
 import day7.tobe.io.IoHandler;
-import day7.tobe.io.OutputHandler;
-import day7.tobe.io.StudyCafeFileHandler;
+import day7.tobe.io.provider.LockerPassFileReader;
+import day7.tobe.io.provider.SeatPassFileReader;
 
 public class StudyCafeApplication {
 
     public static void main(String[] args) {
 
-        InputHandler inputHandler = new InputHandler();
-        OutputHandler outputHandler = new OutputHandler();
-
-        IoHandler ioHandler = new IoHandler(inputHandler, outputHandler);
-
-        StudyCafeFileHandler studyCafeFileHandler = new StudyCafeFileHandler();
-
         StudyCafePassMachine studyCafePassMachine = new StudyCafePassMachine(
-                ioHandler,
-                studyCafeFileHandler
+                new IoHandler(),
+                new SeatPassFileReader(),
+                new LockerPassFileReader()
         );
-
         studyCafePassMachine.run();
     }
 
