@@ -1,7 +1,5 @@
-package day7.tobe.model;
+package day7.tobe.model.pass.locker;
 
-import day7.tobe.model.pass.locker.StudyCafeLockerPass;
-import day7.tobe.model.pass.locker.StudyCafeLockerPasses;
 import day7.tobe.model.pass.seat.StudyCafePassType;
 import day7.tobe.model.pass.seat.StudyCafeSeatPass;
 import org.junit.jupiter.api.DisplayName;

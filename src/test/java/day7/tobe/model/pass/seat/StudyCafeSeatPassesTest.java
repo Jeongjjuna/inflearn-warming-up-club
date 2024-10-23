@@ -1,8 +1,5 @@
-package day7.tobe.model;
+package day7.tobe.model.pass.seat;
 
-import day7.tobe.model.pass.seat.StudyCafePassType;
-import day7.tobe.model.pass.seat.StudyCafeSeatPass;
-import day7.tobe.model.pass.seat.StudyCafeSeatPasses;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

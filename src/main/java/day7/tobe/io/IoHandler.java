@@ -34,7 +34,7 @@ public class IoHandler {
         return inputHandler.getSelectPass(candidatePasses);
     }
 
-    public boolean askDoseUseLockerSelecting(StudyCafeLockerPass lockerPass) {
+    public boolean askUseLockerSelecting(StudyCafeLockerPass lockerPass) {
         outputHandler.askLockerPass(lockerPass);
         return inputHandler.getLockerSelection();
     }

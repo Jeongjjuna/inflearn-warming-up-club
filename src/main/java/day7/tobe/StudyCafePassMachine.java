@@ -47,7 +47,6 @@ public class StudyCafePassMachine {
         }
     }
 
-    // 패스권을 선택한다.
     private StudyCafeSeatPass selectPass() {
         StudyCafePassType passType = ioHandler.askStudyCafePassTypeSelecting();
         List<StudyCafeSeatPass> passCandidates = findPassCandidatesBy(passType);
@@ -71,7 +70,7 @@ public class StudyCafePassMachine {
     }
 
     private boolean isSelectedLockerPass(StudyCafeLockerPass lockerPass) {
-        return ioHandler.askDoseUseLockerSelecting(lockerPass);
+        return ioHandler.askUseLockerSelecting(lockerPass);
 
     }
 

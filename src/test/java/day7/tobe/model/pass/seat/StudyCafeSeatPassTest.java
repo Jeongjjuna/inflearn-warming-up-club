@@ -1,8 +1,6 @@
-package day7.tobe.model;
+package day7.tobe.model.pass.seat;
 
 import day7.tobe.model.pass.locker.StudyCafeLockerPass;
-import day7.tobe.model.pass.seat.StudyCafePassType;
-import day7.tobe.model.pass.seat.StudyCafeSeatPass;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -41,12 +39,12 @@ class StudyCafeSeatPassTest {
         assertThat(passDiscountRate).isEqualTo(10);
     }
 
-    @DisplayName("사물함을 이용할 수 있다.")
+    @DisplayName("사물함을 이용할 수 없다.")
     @Test
     void cannotUseLocker() {
         // given
         StudyCafeSeatPass pass = StudyCafeSeatPass.of(
-                StudyCafePassType.FIXED, 10, 1000, 10
+                StudyCafePassType.HOURLY, 10, 1000, 10
         );
 
         // when
@@ -61,7 +59,7 @@ class StudyCafeSeatPassTest {
     void canUseLocker() {
         // given
         StudyCafeSeatPass pass = StudyCafeSeatPass.of(
-                StudyCafePassType.HOURLY, 10, 1000, 10
+                StudyCafePassType.FIXED, 10, 1000, 10
         );
 
         // when

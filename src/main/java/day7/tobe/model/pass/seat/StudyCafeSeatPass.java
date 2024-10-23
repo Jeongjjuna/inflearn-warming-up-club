@@ -42,7 +42,7 @@ public class StudyCafeSeatPass {
     }
 
     public boolean cannotUseLocker() {
-        return passType == StudyCafePassType.FIXED;
+        return passType.isNotLockerType();
     }
 
     public boolean isSameType(StudyCafePassType userSelectedPassType) {
